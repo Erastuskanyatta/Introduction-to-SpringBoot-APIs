@@ -31,11 +31,17 @@ public class StudentConfig {
                     "jameskairu@gmail.com",
                     LocalDate.of(2000, Month.DECEMBER,13)
             );
+            Students Elius =new Students(
+                    "Elius",
+                    "eliuskairu@gmail.com",
+                    LocalDate.of(1994, Month.AUGUST,28)
+            );
             studentRepository.saveAll(
                     List.of(
                             Erastus,
                             Peter,
-                            James
+                            James,
+                            Elius
                     )
             );
         };
