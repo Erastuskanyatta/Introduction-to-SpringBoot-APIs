@@ -9,6 +9,7 @@ import java.util.Optional;
 public interface StudentRepository
         extends JpaRepository<Students, Long> {
 
-
     Optional<Students> findStudentsByEmail(String email);
+
+
 }

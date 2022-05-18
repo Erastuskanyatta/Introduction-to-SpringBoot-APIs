@@ -11,11 +11,19 @@ import java.time.LocalDate;
 import java.time.Month;
 import java.util.List;
 
+import static java.util.Calendar.JULY;
+import static java.util.Calendar.JUNE;
+
 @Configuration
 public class StudentConfig {
     @Bean
     CommandLineRunner commandLineRunner(StudentRepository studentRepository){
         return args -> {
+            Students JohnMuriiithi = new Students(
+                    "johnMuriithi",
+                    "jonmwangi@gmail.com",
+                    LocalDate.of(2005, 06, 21)
+            );
             Students Erastus =new Students(
                     "Erastus",
                     "eras@gmail.com",
@@ -36,12 +44,32 @@ public class StudentConfig {
                     "eliuskairu@gmail.com",
                     LocalDate.of(1994, Month.AUGUST,28)
             );
+            Students Grace = new Students(
+                    "Grace",
+                    "gracemurithi@gmail.com",
+                    LocalDate.of(1972, JUNE,20)
+            );
+            Students EricG =new Students(
+                    "Eric Gachoki",
+                    "ericg@gmail.com",
+                    LocalDate.of(2001, JULY,23)
+            );
+            Students Beatrice = new Students(
+                    "Beatrice Wanjiru",
+                    "beatrice@gmail.com",
+                    LocalDate.of(2010, 12,23)
+
+            );
             studentRepository.saveAll(
                     List.of(
                             Erastus,
                             Peter,
                             James,
-                            Elius
+                            Elius,
+                            Grace,
+                            EricG,
+                            Beatrice,
+                            JohnMuriiithi
                     )
             );
         };
